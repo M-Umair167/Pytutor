@@ -1,0 +1,206 @@
+.chatbot-section {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .chatbot-container {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+  }
+  
+  .chatbot-header {
+    background-color: rgba(10, 25, 41, 0.8);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .chatbot-header h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  
+  .chatbot-header p {
+    color: var(--accent-color);
+    font-size: 16px;
+  }
+  
+  .chat-messages {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .message {
+    display: flex;
+    margin-bottom: 15px;
+  }
+  
+  .bot-message {
+    justify-content: flex-start;
+  }
+  
+  .user-message {
+    justify-content: flex-end;
+  }
+  
+  .message-content {
+    max-width: 80%;
+    padding: 12px 16px;
+    border-radius: 15px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .bot-message .message-content {
+    background-color: rgba(30, 136, 229, 0.2);
+    border: 1px solid rgba(30, 136, 229, 0.3);
+  }
+  
+  .user-message .message-content {
+    background-color: rgba(100, 181, 246, 0.3);
+    border: 1px solid rgba(100, 181, 246, 0.4);
+    color: white;
+  }
+  
+  .suggestion-chips {
+    display: flex;
+    gap: 10px;
+    padding: 0 20px 15px;
+    flex-wrap: wrap;
+  }
+  
+  .suggestion-chip {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 8px 15px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+  
+  .suggestion-chip:hover {
+    background-color: rgba(100, 181, 246, 0.3);
+    border-color: rgba(100, 181, 246, 0.4);
+  }
+  
+  .chat-input {
+    display: flex;
+    padding: 15px 20px;
+    background-color: rgba(10, 25, 41, 0.8);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .chat-input input {
+    flex-grow: 1;
+    padding: 12px 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    color: var(--text-color);
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+  
+  .chat-input input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(100, 181, 246, 0.3);
+  }
+  
+  .send-btn {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 40px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .send-btn:hover {
+    background-color: var(--accent-color);
+  }
+  
+  /* Chatbot Features */
+  .chatbot-features {
+    padding: 50px 0;
+    background-color: rgba(10, 25, 41, 0.7);
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+  }
+  
+  .feature-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .feature-icon {
+    font-size: 40px;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+  }
+  
+  .feature-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  
+  .feature-card p {
+    margin-bottom: 25px;
+    line-height: 1.6;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .chatbot-container {
+      height: 500px;
+    }
+  
+    .suggestion-chips {
+      padding: 0 15px 10px;
+    }
+  
+    .suggestion-chip {
+      font-size: 12px;
+      padding: 6px 12px;
+    }
+  }
+  
+  

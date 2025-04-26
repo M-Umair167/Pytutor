@@ -1,0 +1,58 @@
+<!-- templates/about.html -->
+{% extends "base.html" %}
+
+{% block title %}Python Tutorials - CodePy{% endblock %}
+
+{% block content %}
+<section class="tutorials-hero">
+    <div class="container">
+        <div class="tutorials-hero-content">
+            <h1>Step-by-step Python tutorials</h1>
+            <p>Learn Python from scratch with structured lessons and real-world examples</p>
+        </div>
+        <div class="tutorials-hero-image">
+            <img src="{{ url_for('static', filename='pics/program1.webp') }}" alt="Python Tutorials">
+        </div>
+    </div>
+</section>
+
+
+<section class="tutorial-detail-preview">
+    <div class="container">
+        <div class="tutorial-preview-content">
+            <h2>Python Introduction</h2>
+            <p>Python is a popular programming language. It was created by Guido van Rossum.</p>
+            <p>It is used for:</p>
+            <ul>
+                <li>web development (server-side)</li>
+                <li>software development</li>
+                <li>mathematics</li>
+                <li>system scripting</li>
+            </ul>
+            <h3>What can Python do?</h3>
+            <ul>
+                <li>Python can be used on a server to create web applications.</li>
+                <li>Python can be used alongside software to create workflows.</li>
+                <li>Python can connect to database systems. It can also read and modify files.</li>
+            </ul>
+        </div>
+        <div class="tutorial-navigation">
+            <h3>Tutorial Navigation</h3>
+            <ul>
+                <li><a href="#" class="active">Python Introduction</a></li>
+                <li><a href="#">Python Syntax</a></li>
+                <li><a href="#">Python Comments</a></li>
+                <li><a href="#">Python Variables</a></li>
+                <li><a href="#">Python Data Types</a></li>
+                <li><a href="#">Python Numbers</a></li>
+                <li><a href="#">Python Casting</a></li>
+                <li><a href="#">Python Strings</a></li>
+                <li><a href="#">Python Booleans</a></li>
+                <li><a href="#">Python Operators</a></li>
+                <li><a href="#">Python Lists</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

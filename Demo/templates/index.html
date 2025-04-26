@@ -1,0 +1,67 @@
+<!-- templates/about.html -->
+{% extends "base.html" %}
+
+{% block title %}CodePy - Your AI-powered Python Tutor{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="animate">WELCOME TO <span>CODE.PY</span></h1>
+            <h2 class="animate">Your AI powered Python Tutor</h2>
+            <p class="animate">Interactive lessons, real-time compiler, and an AI chatbot to help you code with
+                confidence
+            </p>
+            <a href="tutorials.html" class="btn animate">LEARN MORE</a>
+        </div>
+        <div class="hero-image animate">
+            <img src="{{ url_for('static', filename='pics/image.png') }}" alt="Python Coding">
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <div class="container">
+        <h2 class="section-title">Our Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h3>Step-by-step Python tutorials</h3>
+                <p>Learn Python from scratch with structured lessons and real-world examples</p>
+                <a href="tutorials.html" class="btn btn-outline">Start Learning</a>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3>Ask your AI Tutor for help</h3>
+                <p>Get instant help from our chatbot whether you're stuck on syntax or want to understand a concept
+                    better</p>
+                <a href="chatbot.html" class="btn btn-outline">Talk to the Chatbot</a>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>Write and run Python code instantly</h3>
+                <p>Our real-time Python compiler helps you learn through hands-on practice. No installations, just code
+                    and
+                    run</p>
+                <a href="compiler.html" class="btn btn-outline">Try the Compiler</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <div class="container">
+        <h2>Ready to start your Python journey?</h2>
+        <p>Join thousands of students learning Python with CodePy</p>
+        <a href="signup.html" class="btn">Get Started for Free</a>
+    </div>
+</section>
+{% endblock %}

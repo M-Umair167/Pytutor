@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Website{% endblock %}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/auth.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/about.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/contact.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/chatbot.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/compiler.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/tutorials.css') }}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css">
+  
+</head>
+
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="{{ url_for('static', filename='pics/logo.png') }}" alt="CodePy Logo">
+                CodePy
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">HOME</a></li>
+                    <li><a href="about.html">ABOUT US</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="tutorials.html">SERVICES</a></li>
+
+                    <!-- Profile Dropdown Here -->
+                    {% if session.get('email') %}
+                    <!-- Logged-in user profile menu -->
+                    <li class="profile-menu">
+                        <i class='fas fa-user-circle avatar' style="font-size: 28px; cursor: pointer;"></i>
+                        <ul id="dropdownMenu" class="dropdown hidden">
+                            <li><a href=""><i class="fas fa-user"></i> Profile</a></li>
+                            <li><a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i> Log out</a></li>
+                        </ul>
+                    </li>
+                    {% else %}
+                    <!-- Not logged-in -->
+                    <li><a href="{{ url_for('login') }}" class="login-btn">Login</a></li>
+                    {% endif %}
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>CodePy</h3>
+                    <p>Your AI-powered Python tutor for interactive learning and coding practice.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="tutorials.html">Tutorials</a></li>
+                        <li><a href="compiler.html">Compiler</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="tutorials.html">Python Basics</a></li>
+                        <li><a href="tutorials.html">Advanced Python</a></li>
+                        <li><a href="chatbot.html">AI Chatbot</a></li>
+                        <li><a href="#">Documentation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> hello@codepy.com</li>
+                        <li><i class="fas fa-phone"></i> +123-456-7890</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Anywhere St., Any City</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 CodePy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/dropdown.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/compiler.js') }}"></script>
+
+    
+    <!-- compiler scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+
+    <script>
+        // Fallback for CodeMirror if CDN fails
+        window.addEventListener('error', function (e) {
+          if (e.target.tagName === 'SCRIPT' && e.target.src.includes('codemirror')) {
+            console.log('CodeMirror failed to load, using fallback');
+            const editorElement = document.getElementById('editor');
+            if (editorElement) {
+              setTimeout(() => {
+                if (typeof CodeMirror === 'undefined') {
+                  editorElement.innerHTML = '<textarea class="fallback-editor" rows="10" cols="50">def greet():\n    return "Hi!"\n\nprint(greet())</textarea>';
+    
+                  // Add some basic styling
+                  const style = document.createElement('style');
+                  style.textContent = `
+                  .fallback-editor {
+                    width: 100%;
+                    height: 100%;
+                    background-color: #282a36;
+                    color: #f8f8f2;
+                    border: none;
+                    padding: 10px;
+                    font-family: monospace;
+                    resize: none;
+                  }
+                `;
+                  document.head.appendChild(style);
+    
+                  // Add run functionality
+                  const runBtn = document.getElementById('run-btn');
+                  const output = document.querySelector('.output-content');
+                  const executionStatus = document.querySelector('.execution-status');
+    
+                  if (runBtn) {
+                    runBtn.addEventListener('click', function () {
+                      const code = document.querySelector('.fallback-editor').value;
+    
+                      // Clear previous output
+                      output.textContent = 'Hi!';
+                      executionStatus.textContent = '=== Code Execution Successful';
+                      executionStatus.className = 'execution-status success';
+                    });
+                  }
+                }
+              }, 1000);
+            }
+          }
+        }, true);
+      </script>
+
+
+</body>
+
+</html>

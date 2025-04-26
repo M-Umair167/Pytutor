@@ -1,0 +1,73 @@
+<!-- templates/about.html -->
+{% extends "base.html" %}
+
+{% block title %}AI Chatbot - CodePy{% endblock %}
+
+{% block content %}
+<section class="chatbot-section">
+    <div class="container">
+        <div class="chatbot-container">
+            <div class="chatbot-header">
+                <h1>CodePy</h1>
+                <p>Ask our AI anything</p>
+            </div>
+
+            <div class="chat-messages" id="chat-messages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        <p>Hello! I'm your AI Python tutor. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="suggestion-chips">
+                <div class="suggestion-chip">What can I ask you to do?</div>
+                <div class="suggestion-chip">Help me with Python syntax</div>
+                <div class="suggestion-chip">Explain functions in Python</div>
+            </div>
+
+            <div class="chat-input">
+                <input type="text" id="user-input" placeholder="Ask me anything about your learning">
+                <button id="send-btn" class="send-btn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="chatbot-features">
+    <div class="container">
+        <h2 class="section-title">Ask your AI Tutor for help</h2>
+        <p class="section-subtitle">Get instant help from our chatbot whether you're stuck on syntax or want to
+            understand a concept better</p>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <h3>24/7 Assistance</h3>
+                <p>Get help anytime with our AI tutor that's always available to answer your Python questions</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>Code Explanations</h3>
+                <p>Paste your code and get detailed explanations of how it works or how to fix errors</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3>Concept Clarification</h3>
+                <p>Ask about any Python concept and get clear, easy-to-understand explanations</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

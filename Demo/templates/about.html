@@ -1,0 +1,72 @@
+<!-- templates/about.html -->
+{% extends "base.html" %}
+
+{% block title %}About Us - CodePy{% endblock %}
+
+{% block content %}
+<section class="about-hero">
+  <div class="container">
+    <h1>ABOUT US</h1>
+  </div>
+</section>
+
+<section class="vision">
+  <div class="container">
+    <div class="vision-content">
+      <h2>Vision</h2>
+      <p>CodePY empowers future developers through hands-on Python education, rooted in real-world technologies like
+        AI and computer vision. Our mission is to bridge theory with application, inspiring innovation and practical
+        skill-building.</p>
+    </div>
+    <div class="vision-image">
+      <img src="{{ url_for('static', filename='pics/visions.jpg') }}" alt="Vision">
+    </div>
+  </div>
+</section>
+
+<section class="team">
+  <div class="container">
+    <div class="team-image">
+      <img src="{{ url_for('static', filename='pics/team.jpg') }}" alt="Professional Team">
+    </div>
+    <div class="team-content">
+      <h2>Professional Team</h2>
+      <p>Our team delivers a seamless Python learning experience for developers in Pakistan and beyond. We focus on
+        quality, innovation, and real-world relevance to empower learners for success in the tech world.</p>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="container">
+    <h2 class="section-title">OUR FEATURES</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-book"></i>
+        </div>
+        <h3>Comprehensive Tutorials</h3>
+        <p>Step-by-step Python tutorials covering everything from basics to advanced topics</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-robot"></i>
+        </div>
+        <h3>AI-Powered Learning</h3>
+        <p>Our AI tutor provides personalized assistance and answers your questions 24/7</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-code"></i>
+        </div>
+        <h3>Interactive Compiler</h3>
+        <p>Write and run Python code directly in your browser with real-time feedback</p>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+{% endblock %}

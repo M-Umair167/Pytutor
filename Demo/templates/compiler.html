@@ -1,0 +1,70 @@
+<!-- templates/about.html -->
+{% extends "base.html" %}
+
+{% block title %}Python Compiler - CodePy{% endblock %}
+
+{% block content %}
+<section class="compiler-section">
+    <div class="container">
+        <div class="compiler-header">
+            <h1>CodePy | Python online compiler</h1>
+            <div class="compiler-actions">
+                <button id="run-btn" class="btn">Run</button>
+                <button id="ask-ai-btn" class="btn btn-outline">Ask AI</button>
+            </div>
+        </div>
+
+        <div class="compiler-container">
+            <div class="editor-container">
+                <div class="file-tab">Main.py</div>
+                <div id="editor"></div>
+            </div>
+
+            <div class="output-container">
+                <div class="output-header">
+                    <h3>Output</h3>
+                    <button id="clear-output" class="btn-small">Clear</button>
+                </div>
+                <div id="output" class="output">
+                    <div class="output-content"></div>
+                    <div class="execution-status success">=== Code Execution Successful</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="compiler-features">
+    <div class="container">
+        <h2 class="section-title">Write and run Python code instantly</h2>
+        <p class="section-subtitle">Our real-time Python compiler helps you learn through hands-on practice. No
+            installations, just code and run</p>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3>Instant Execution</h3>
+                <p>Run your Python code instantly without any setup or installation required</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3>AI Assistance</h3>
+                <p>Get help from our AI assistant when you're stuck or need code explanations</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-save"></i>
+                </div>
+                <h3>Save Your Work</h3>
+                <p>Create an account to save your code and access it from anywhere</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

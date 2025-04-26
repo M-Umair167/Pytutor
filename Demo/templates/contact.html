@@ -1,0 +1,70 @@
+<!-- templates/about.html -->
+{% extends "base.html" %}
+
+{% block title %}Contact Us - CodePy{% endblock %}
+
+{% block content %}
+<section class="contact-section">
+    <div class="container">
+        <h1 class="section-title">CONTACT US</h1>
+
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Convey Your Ideas to Us</h2>
+                <p>Contact us for questions, technical assistance, or collaboration opportunities via the contact
+                    information
+                    provided.</p>
+
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+123-456-7890</p>
+                </div>
+
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>hello@codepy.com</p>
+                </div>
+
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>123 Anywhere ST., Any City, 12345</p>
+                </div>
+
+                <div class="contact-image">
+                    <img src="{{ url_for('static', filename='pics/contact3.webp') }}" alt="Contact">
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form action="/contact" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required pattern="[A-Za-z. ]+"
+                            title="Name can only contain letters, spaces, and dots.">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"
+                            title="Enter a valid email.">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number (optional)</label>
+                        <input type="tel" id="phone" name="phone" pattern="[\d\s\-\+\(\)]*"
+                            title="Phone can include numbers, +, -, and spaces.">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">SUBMIT NOW</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
